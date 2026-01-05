@@ -1,0 +1,117 @@
+body {
+    background: url("fon.jpg") center/cover no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: -1;
+}
+
+.card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    width: 360px;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.badge {
+    background: #c8102e;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+#timer {
+    font-weight: bold;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.levels {
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+}
+
+button {
+    background: #c8102e;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#loading, #success {
+    display: none;
+    font-weight: bold;
+}
+
+#success {
+    color: #00ff88;
+}
+
+.toggle {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.info-box {
+    display: none;
+    background: #c8102e;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 22px;
+    }
+    .levels {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+
+
+
